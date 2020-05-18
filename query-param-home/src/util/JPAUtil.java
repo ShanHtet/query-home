@@ -9,7 +9,7 @@ import java.sql.Statement;
 public class JPAUtil {
 
     // Database configuration
-	 public static String url = "jdbc:mysql://localhost:3306/another";
+	 public static String url = "jdbc:mysql://localhost:3306/query";
 	    public static String dbdriver = "com.mysql.jdbc.Driver";
 	    public static String username = "root";
 	    public static String password = "admin";
