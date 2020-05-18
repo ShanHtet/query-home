@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 public class Main {
@@ -52,6 +53,37 @@ public class Main {
 					System.out.println("DEPAR: "+e.getDepartment());
 					System.out.println();
 				});
+		
+		
+		em.createNamedQuery("findByDepartment",Employee.class)
+		.setParameter("dep", "HR")
+		.getResultList()
+		.forEach(e->{
+			System.out.println("DEP IS :"+e.getDepartment());
+			System.out.println("NAME ID : "+e.getName());
+		});
+		
+		
+		em.createNamedQuery("findBySa",Employee.class)
+		.setParameter("sa", 500000)
+		.getResultList()
+		.forEach(e->{
+			System.out.println("NAME IS : " + e.getName());
+			System.out.println("SA IS : " + e.getSalary());
+		});
+		
+		
+//		
+//		String string = "select e from Employee e"+"where e.name=?1 OR e.salary?2";
+//		Query q = em.createQuery(string);
+//		q.setParameter(1, "THAW").setParameter(2, "200000");
+//		List<Employee> e = q.getResultList();
+//		
+
+		
+	
+		
+		
 		
 		
 		

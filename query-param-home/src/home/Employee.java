@@ -8,6 +8,14 @@ import javax.persistence.*;
  *
  */
 @Entity
+@NamedQueries({
+	@NamedQuery(name="findByDepartment",
+			query="select e from "
+		+ "Employee e where e.department=:dep"),
+	
+	@NamedQuery(name="findBySa",
+	query="select e from Employee e where e.salary=:sa")
+})
 
 public class Employee implements Serializable {
 
